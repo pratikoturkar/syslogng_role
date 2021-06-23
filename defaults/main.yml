@@ -1,2 +1,24 @@
 ---
 # defaults file for /etc/ansible/roles/syslog
+# defaults file/variable for syslog-ng
+
+syslog_ng_config_dir: "/etc/syslog-ng"
+syslog_ng_template: "syslog.j2"
+syslog_ng_config_file: "{{ syslog_ng_config_dir }}/syslog-ng.conf"
+loghost: log01
+
+
+
+
+
+syslog_ng_config_options:
+  flush_lines: 0
+  time_reopen: 10
+  log_fifo_size: 1000
+  chain_hostname: off
+  use_dns: no
+  use_fqdn: yes
+  ts_format: iso
+  create_dirs: no
+  keep_hostname: yes
+
